@@ -6,6 +6,9 @@ distro: ahk
 target:
   - ahk-image
 
+env:
+  MACHINE: "genericx86-64"
+
 repos:
   bitbake:
     url: "https://git.openembedded.org/bitbake"
@@ -19,9 +22,19 @@ repos:
     layers:
       meta:
 
-  meta-intel:
-    url: "git://git.yoctoproject.org/meta-intel"
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
     branch: kirkstone
+    layers:
+      meta-oe:
+      meta-python:
+      meta-networking:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    branch: kirkstone
+    layers:
+      meta-yocto-bsp:
 
   meta-ahk:
     layers:
@@ -29,7 +42,10 @@ repos:
 
 local_conf_header:
   meta-ahk: |
+    # Use only the local hash equivalence server, without an sstate mirror
+    BB_HASHSERVE = "auto"
+    BB_HASHSERVE_UPSTREAM = ""
+    SSTATE_MIRRORS = ""
     # Some useful lines you may want to copy to your site.conf for development
     # INHERIT += "rm_work"
     # EXTRA_IMAGE_FEATURES = "debug-tweaks"
-    BBMASK += "meta-intel/recipes-kernel/linux/"

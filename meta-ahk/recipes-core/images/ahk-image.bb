@@ -4,7 +4,7 @@
 
 SUMMARY = "A simple, minimal image"
 
-IMAGE_INSTALL = "dropbear"
+IMAGE_INSTALL = "ca-certificates"
 
 IMAGE_LINGUAS = " "
 
