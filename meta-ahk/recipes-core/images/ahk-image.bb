@@ -4,7 +4,13 @@
 
 SUMMARY = "A simple, minimal image"
 
-IMAGE_INSTALL = "ca-certificates"
+IMAGE_INSTALL = "\
+    base-files \
+    busybox \
+    init-ifupdown \
+    packagegroup-core-boot \
+    ca-certificates \
+"
 
 IMAGE_LINGUAS = " "
 

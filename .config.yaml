@@ -6,9 +6,6 @@ distro: ahk
 target:
   - ahk-image
 
-env:
-  MACHINE: "genericx86-64"
-
 repos:
   bitbake:
     url: "https://git.openembedded.org/bitbake"

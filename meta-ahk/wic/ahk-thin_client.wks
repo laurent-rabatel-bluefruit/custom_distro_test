@@ -1,2 +1,2 @@
-part /boot --source bootimg-efi --fstype=vfat --label EFI --align 1024
+part /boot --source bootimg-efi --sourceparams="loader=grub-efi" --fstype=vfat --label EFI --active --align 1024
 part / --source rootfs --fstype=ext4 --label root --align 4096
