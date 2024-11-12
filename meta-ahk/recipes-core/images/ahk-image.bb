@@ -14,6 +14,6 @@ IMAGE_INSTALL = "\
 
 IMAGE_INSTALL += "kexec-tools"
 
-IMAGE_LINGUAS = " "
+IMAGE_LINGUAS = "en-gb"
 
 inherit core-image
