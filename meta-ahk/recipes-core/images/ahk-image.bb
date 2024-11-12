@@ -12,6 +12,8 @@ IMAGE_INSTALL = "\
     ca-certificates \
 "
 
+IMAGE_INSTALL += "kexec-tools"
+
 IMAGE_LINGUAS = " "
 
 inherit core-image
